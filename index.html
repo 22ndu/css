@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hover图形动画</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background-color: #121520;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container{
+            display:flex;
+            gap:32px;
+        }
+        .item {
+            width: 80px;
+            height: 80px;
+            /* 默认阴影，y方向偏移 */
+            box-shadow: 0 12px 20px rgba(0,0,0,0.35);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* 文字默认透明隐藏，图形保留可见 */
+            color: #fff;
+            font-size: 18px;
+            color:transparent;
+            /* 平滑过渡动画 */
+            transition: all 0.3s ease;
+        }
+        /* hover效果：上移10px，阴影偏移为0，文字变白显示 */
+        .item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 0 20px rgba(0,0,0,0.35);
+            color:#ffffff;
+        }
+        /* 各个不同形状+渐变 */
+        .shape1 {
+            background: linear-gradient(135deg, #ff8060, #ff4460);
+        }
+        .shape2 {
+            background: linear-gradient(135deg, #36dd88, #22ccbb);
+        }
+        .shape3 {
+            background: linear-gradient(135deg, #9977aa, #665588);
+            border-radius: 22px;
+        }
+        .shape4 {
+            background: linear-gradient(135deg, #ffcc66, #ff9955);
+            border-radius: 50%;
+        }
+        .shape5 {
+            background: linear-gradient(135deg, #448877, #336677);
+            border-radius: 12px;
+        }
+        .shape6 {
+            background: linear-gradient(135deg, #b088bb, #886699);
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item shape1">hover</div>
+        <div class="item shape2">hover</div>
+        <div class="item shape3">hover</div>
+        <div class="item shape4">hover</div>
+        <div class="item shape5">hover</div>
+        <div class="item shape6">hover</div>
+    </div>
+</body>
+</html>
